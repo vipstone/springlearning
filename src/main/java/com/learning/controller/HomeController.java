@@ -7,11 +7,14 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
+    /**
+     * index 方法
+     **/
     @RequestMapping("/")
     public ModelAndView index() {
-        System.out.println("进入 HomeController index() 方法.");
+        System.out.println("do index()");
         ModelAndView modelAndView = new ModelAndView("index",
-                "message", "laowang");
+                "message", "用户信息");
         return modelAndView;
     }
 

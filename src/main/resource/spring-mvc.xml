@@ -7,23 +7,21 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--扫描包路径-->
     <context:component-scan base-package="com.learning"/>
-
     <!-- 开启注解 -->
     <context:annotation-config/>
-
     <!-- AOP -->
     <aop:aspectj-autoproxy/>
-
     <!-- 配置视图解析器 -->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
     <!-- 配置全局拦截器 -->
     <mvc:interceptors>
         <bean class="com.learning.core.MyInteceptor"></bean>
     </mvc:interceptors>
-
+    <!-- JSR-303配置 -->
+    <mvc:annotation-driven />
+    <mvc:default-servlet-handler/>
 </beans>
