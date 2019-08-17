@@ -21,7 +21,6 @@
     <mvc:interceptors>
         <bean class="com.learning.core.MyInteceptor"></bean>
     </mvc:interceptors>
-    <!-- JSR-303配置 -->
+    <!-- 支持 JSR-303 验证 -->
     <mvc:annotation-driven />
-    <mvc:default-servlet-handler/>
 </beans>
