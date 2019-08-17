@@ -19,7 +19,12 @@
     </bean>
     <!-- 配置全局拦截器 -->
     <mvc:interceptors>
-        <bean class="com.learning.core.MyInteceptor"></bean>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <!-- 排除拦截地址 -->
+            <mvc:exclude-mapping path="/api/**" />
+            <bean class="com.learning.core.MyInteceptor"></bean>
+        </mvc:interceptor>
     </mvc:interceptors>
     <!-- 支持 JSR-303 验证 -->
     <mvc:annotation-driven />

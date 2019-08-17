@@ -12,6 +12,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/api")
 public class PersonController {
     /**
      * 自动类型转换
